@@ -217,7 +217,6 @@ function Slider2d( options ){
 }/**
  * Created by JetBrains WebStorm.
  *___________________________________________
- * copyright 5/2/12
  * User: cody smith
  * Date: 5/2/12
  * Time: 1:14 PM
