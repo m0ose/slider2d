@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script src="slider2d.js"></script>
+
+<script>
+
+
+var mygraph;
+var test = function(){
+    mygraph = new Slider2d();
+    mygraph.xunits = 'T Celsius';
+    mygraph.yunits = 'P ATM';
+    mygraph.maxX = 400;
+    mygraph.minX = -70;
+    mygraph.maxY = 230;
+    mygraph.minY = 0;
+
+    var img = new Image();
+    img.onload=function(e){
+        // document.body.appendChild(img);
+        mygraph.initCanvas(img);
+    }
+    img.src = "h20.jpg";
+
+}
+var testCanvas = function(){
+    mygraph = new Slider2d();
+    var cn = document.createElement('canvas');
+    var ctx = cn.getContext('2d');
+    ctx.beginPath();
+    ctx.arc(75,75,50,0,Math.PI*2,true); // Outer circle
+    ctx.moveTo(110,75);
+    ctx.arc(75,75,35,0,Math.PI,false);   // Mouth (clockwise)
+    ctx.moveTo(65,65);
+    ctx.arc(60,65,5,0,Math.PI*2,true);  // Left eye
+    ctx.moveTo(95,65);
+    ctx.arc(90,65,5,0,Math.PI*2,true);  // Right eye
+    ctx.stroke();
+
+    mygraph.initCanvas(cn);
+
+}
+</script>
+<head>
+    <title></title>
+</head>
+<body onload="test()">
+<canvas class="evacGraph" width="800px" height="300px"></canvas>
+</body>
+</html>
